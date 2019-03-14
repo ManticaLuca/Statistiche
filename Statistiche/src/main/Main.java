@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         int in;
         try {
-            System.out.println("Inserire un numero di caratteri [>=10]:    ");
+            System.out.println("Inserire un numero di caratteri [>=10]:   ");
             do {
                 in = System.in.read();
             } while (in >= 10);
