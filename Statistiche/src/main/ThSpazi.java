@@ -9,17 +9,6 @@ package main;
  *
  * @author mantica_luca
  */
-public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        do{
-            System
-        }
-        while()
-    }
+public class ThSpazi {
     
 }
