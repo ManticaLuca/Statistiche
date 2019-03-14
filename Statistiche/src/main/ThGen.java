@@ -5,10 +5,43 @@
  */
 package main;
 
+import java.util.Random;
+
 /**
  *
  * @author mantica_luca
  */
-public class ThGen {
+public class ThGen extends Thread {
+
+    private SharedData sharedData;
+    private int num;
+
+    public ThGen(SharedData sharedData, int num) {
+        this.sharedData = sharedData;
+        this.num = num;
+    }
     
+    @Override
+    public void run(){
+        if (sharedData.getNumeroLettere() < num) {
+        Random rnd = new Random();
+        char a ;
+        int next = rnd.nextInt(26) + 66 ;
+            switch (next) {
+                case 91:
+                    a = ' ';
+                    break;
+                case 92:
+                    a = '.';
+                    break;
+                default:
+                    a = (char)next;
+                    break;
+            }
+            sharedData.getBuffer()[sharedData.getNumEl()] = a;
+        }
+        if (sharedData.getNumEl() == 10) {
+            
+        }
+    }
 }

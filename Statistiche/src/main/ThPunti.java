@@ -9,6 +9,22 @@ package main;
  *
  * @author mantica_luca
  */
-public class ThPunti {
-    
+public class ThPunti extends Thread {
+
+    private SharedData sharedData;
+
+    public ThPunti(SharedData sharedData) {
+        this.sharedData = sharedData;
+    }
+
+    @Override
+    public void run() {
+
+        for (int i = 0; i < sharedData.getNumEl(); i++) {
+            if (sharedData.getBuffer()) {
+            
+            }
+        }
+        
+    }
 }
