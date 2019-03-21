@@ -19,12 +19,11 @@ public class ThPunti extends Thread {
 
     @Override
     public void run() {
-
         for (int i = 0; i < sharedData.getNumEl(); i++) {
-            if (sharedData.getBuffer()) {
-            
+            if (sharedData.getBuffer()[i] == '.') {
+                sharedData.incNumPuntiLetti();
             }
         }
-        
+        sharedData.semLetturaPunti.release();
     }
 }

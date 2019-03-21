@@ -6,6 +6,8 @@
 package main;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,34 +16,43 @@ import java.util.Random;
 public class ThGen extends Thread {
 
     private SharedData sharedData;
-    private int num;
 
-    public ThGen(SharedData sharedData, int num) {
+    public ThGen(SharedData sharedData) {
         this.sharedData = sharedData;
-        this.num = num;
     }
-    
+
     @Override
-    public void run(){
-        if (sharedData.getNumeroLettere() < num) {
-        Random rnd = new Random();
-        char a ;
-        int next = rnd.nextInt(26) + 66 ;
-            switch (next) {
-                case 91:
-                    a = ' ';
-                    break;
-                case 92:
-                    a = '.';
-                    break;
-                default:
-                    a = (char)next;
-                    break;
+    public void run() {
+        for (int i = 0; i < sharedData.getNumeroLettere(); i++) {
+            if (sharedData.getNumEl() < 10) {
+                Random rnd = new Random();
+                char a;
+                int next = rnd.nextInt(26) + 66;
+                switch (next) {
+                    case 91:
+                        a = ' ';
+                        sharedData.incNumSpaziInseriti();
+                        break;
+                    case 92:
+                        a = '.';
+                        sharedData.incNumPuntiInseriti();
+                        break;
+                    default:
+                        a = (char) next;
+                        break;
+                }
+                sharedData.getBuffer()[sharedData.getNumEl()] = a;
+                sharedData.setNumEl(sharedData.getNumEl() + 1);
             }
-            sharedData.getBuffer()[sharedData.getNumEl()] = a;
-        }
-        if (sharedData.getNumEl() == 10) {
-            
+            else{
+                try {
+                    sharedData.semLetturaSpazi.acquire();
+                    sharedData.semLetturaPunti.acquire();
+                    sharedData.clearBuffer();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(ThGen.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }
 }

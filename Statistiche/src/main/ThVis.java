@@ -9,6 +9,18 @@ package main;
  *
  * @author mantica_luca
  */
-public class ThVis {
-    
+public class ThVis extends Thread {
+
+    private SharedData sharedData;
+
+    public ThVis(SharedData sharedData) {
+        this.sharedData = sharedData;
+    }
+
+    @Override
+    public void run() {
+        //
+        sharedData.visualizza();
+        //
+    }
 }
