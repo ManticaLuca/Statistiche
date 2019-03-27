@@ -5,8 +5,6 @@
  */
 package main;
 
-import java.util.Arrays;
-import java.util.Vector;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -15,69 +13,155 @@ import java.util.concurrent.Semaphore;
  */
 public class SharedData {
 
-    public Semaphore semLetturaPunti;
-    public Semaphore semLetturaSpazi;
-    public Semaphore semVis;
-    public Semaphore semVis;
-
-    private int numeroLettere;
+    public Semaphore semLetturaPunti, semLetturaSpazi, semScritturaPunti, semScritturaSpazi, semVisualizza, semVisualizzato, semJoin;
     private char[] buffer;
-    private int numEl;
-    private int numSpaziInseriti;
-    private int numPuntiInseriti;
-    private int numSpaziLetti;
-    private int numPuntiLetti;
+    private int numeroLettereDaGenerare, numeroLettereDaLeggere, lunghezzaBuffer;
+    private int numSpaziInseriti, numPuntiInseriti, numSpaziLetti, numPuntiLetti;
+
+    private final boolean[] finito;
 
     public SharedData(int num) {
+        semLetturaPunti = new Semaphore(1);
+        semLetturaSpazi = new Semaphore(1);
+        semScritturaPunti = new Semaphore(0);
+        semScritturaSpazi = new Semaphore(0);
+        semVisualizza = new Semaphore(0);
+        semVisualizzato = new Semaphore(0);
+        semJoin = new Semaphore(0);
+
         buffer = new char[10];
-        numEl = 0;
-        numeroLettere = num;
+        numeroLettereDaGenerare = num;
+        numeroLettereDaLeggere = 0;
+        lunghezzaBuffer = 0;
         numSpaziInseriti = 0;
         numPuntiInseriti = 0;
-        numSpaziLetti = 0;
         numPuntiLetti = 0;
-        //imp sem
-        sem1 = new Semaphore(2);
-        semVis = new Semaphore(0);
+        numSpaziLetti = 0;
+        finito = new boolean[]{false, false, false};
     }
 
-    public void incNumSpaziInseriti() {
+    public int getNumSpaziInseriti() {
+        return numSpaziInseriti;
+    }
+
+    public int getNumPuntiInseriti() {
+        return numPuntiInseriti;
+    }
+
+    public int getNumSpaziLetti() {
+        return numSpaziLetti;
+    }
+
+    public int getNumPuntiLetti() {
+        return numPuntiLetti;
+    }
+
+    synchronized public void incNumSpaziInseriti() {
         numSpaziInseriti++;
     }
 
-    public void incNumPuntiInseriti() {
+    synchronized public void incNumPuntiInseriti() {
         numPuntiInseriti++;
     }
-    
-    public void incNumSpaziLetti() {
+
+    synchronized public void incNumSpaziLetti() {
         numSpaziLetti++;
     }
 
-    public void incNumPuntiLetti() {
+    synchronized public void incNumPuntiLetti() {
         numPuntiLetti++;
     }
 
-    public int getNumeroLettere() {
-        return numeroLettere;
+    synchronized public int getNumeroLettereDaGenerare() {
+        return numeroLettereDaGenerare;
     }
 
-    public char[] getBuffer() {
+    synchronized public void setNumeroLettereDaGenerare(int numeroLettereDaGenerare) {
+        this.numeroLettereDaGenerare = numeroLettereDaGenerare;
+    }
+
+    synchronized public int getNumeroLettereDaLeggere() {
+        return numeroLettereDaLeggere;
+    }
+
+    synchronized public void setNumeroLettereDaLeggere(int numeroLettereDaLeggere) {
+        this.numeroLettereDaLeggere = numeroLettereDaLeggere;
+    }
+
+    synchronized public int getLunghezzaBuffer() {
+        return lunghezzaBuffer;
+    }
+
+    synchronized public void setLunghezzaBuffer(int lunghezzaBuffer) {
+        this.lunghezzaBuffer = lunghezzaBuffer;
+    }
+
+    synchronized public char[] getBuffer() {
         return buffer;
     }
 
-    public int getNumEl() {
-        return numEl;
+    synchronized public void setBufferAt(int index, char val) {
+        buffer[index] = val;
     }
 
-    public void setNumEl(int num) {
-        numEl = num;
+    synchronized public char getBufferAt(int index) {
+        return buffer[index];
     }
 
-    public synchronized void visualizza() {
-        System.out.println(Arrays.toString(buffer) + numSpaziInseriti + numPuntiInseriti + numSpaziLetti + numPuntiLetti);
+    synchronized public void clearBuffer() {
+        buffer = new char[lunghezzaBuffer];
     }
 
-    void clearBuffer() {
-        numEl = 0;
+    synchronized public void visualizza() {
+        System.out.println("Punti inseriti: " + numPuntiInseriti);
+        System.out.println("Punti letti: " + numPuntiLetti);
+        System.out.println("Spazi inseriti: " + numSpaziInseriti);
+        System.out.println("Spazi letti: " + numSpaziLetti);
+        System.out.println("-------------");
+    }
+
+    synchronized public boolean isEstrazioneTerminata() {
+        return finito[0];
+    }
+
+    synchronized public void setEstrazioneTerminata(boolean estrazioneTerminata) {
+        this.finito[0] = estrazioneTerminata;
+    }
+
+    synchronized public boolean isRicercaTerminata() {
+        return finito[1] && finito[2];
+    }
+
+    synchronized public void setRicercaTerminata(boolean val, boolean index) {
+        int pos = index ? 1 : 2;
+        finito[pos] = val;
+    }
+
+    synchronized public Semaphore getSemLetturaPunti() {
+        return semLetturaPunti;
+    }
+
+    synchronized public Semaphore getSemLetturaSpazi() {
+        return semLetturaSpazi;
+    }
+
+    synchronized public Semaphore getSemScritturaPunti() {
+        return semScritturaPunti;
+    }
+
+    synchronized public Semaphore getSemScritturaSpazi() {
+        return semScritturaSpazi;
+    }
+
+    synchronized public Semaphore getSemVisualizza() {
+        return semVisualizza;
+    }
+
+    synchronized public Semaphore getSemVisualizzato() {
+        return semVisualizzato;
+    }
+
+    synchronized public Semaphore getSemJoin() {
+        return semJoin;
     }
 }

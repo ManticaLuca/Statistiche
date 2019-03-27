@@ -5,13 +5,17 @@
  */
 package main;
 
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
- * @author mantica_luca
+ * @author Luca Mantica
  */
 public class ThVis extends Thread {
 
-    private SharedData sharedData;
+    private final SharedData sharedData;
 
     public ThVis(SharedData sharedData) {
         this.sharedData = sharedData;
@@ -19,8 +23,15 @@ public class ThVis extends Thread {
 
     @Override
     public void run() {
-        //
-        sharedData.visualizza();
-        //
+        while (!sharedData.isRicercaTerminata()) {
+            try {
+                sharedData.getSemVisualizzato().release();
+                sharedData.getSemVisualizza().acquire();
+                sharedData.visualizza();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ThVis.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        sharedData.getSemJoin().release();
     }
 }

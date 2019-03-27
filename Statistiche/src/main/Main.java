@@ -5,29 +5,45 @@
  */
 package main;
 
-import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author mantica_luca
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static final Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
-        int in;
+        System.out.print("Inserire il numero di lettere da generere:  ");
+        int lettere = scan.nextInt();
+        while (lettere < 1) {
+            System.err.println("Inserisci un numero > 0");
+            lettere = scan.nextInt();
+        }
+        final SharedData sharedData = new SharedData(lettere);
+        final ThGen thGen = new ThGen(sharedData);
+        final ThCerca thPunti = new ThCerca(sharedData, '.'), thSpazi = new ThCerca(sharedData, ' ');
+        final ThVis thVis = new ThVis(sharedData);
+        thVis.start();
+        thGen.start();
+        thPunti.start();
+        thSpazi.start();
+
+       
         try {
-            System.out.println("Inserire un numero di caratteri [>=10]:   ");
-            do {
-                in = System.in.read();
-            } while (in >= 10);
-        } catch (IOException ex) {
+            sharedData.getSemJoin().acquire(4);
+        } catch (InterruptedException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
+        if (sharedData.getNumPuntiInseriti()== sharedData.getNumPuntiLetti() && sharedData.getNumSpaziInseriti() == sharedData.getNumSpaziLetti()) {
+            System.out.println("Generazione completata con successo");
+        } else {
+            System.err.println("C'è stato uno o piu' errori");
+        }
+
     }
 }
