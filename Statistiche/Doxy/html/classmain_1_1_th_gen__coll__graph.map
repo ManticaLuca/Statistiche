@@ -1,0 +1,3 @@
+<map id="ThGen" name="ThGen">
+<area shape="rect" id="node3" href="$classmain_1_1_shared_data.html" title="{SharedData\n|~ numeroLettereDaLeggere\l~ lunghezzaBuffer\l~ numPuntiInseriti\l~ numSpaziLetti\l~ numPuntiLetti\l&#45; buffer\l&#45; numeroLettereDaGenerare\l&#45; numSpaziInseriti\l&#45; finito\l|+ SharedData()\l+ getNumSpaziInseriti()\l+ getNumPuntiInseriti()\l+ getNumSpaziLetti()\l+ getNumPuntiLetti()\l+ incNumSpaziInseriti()\l+ incNumPuntiInseriti()\l+ incNumSpaziLetti()\l+ incNumPuntiLetti()\l+ getNumeroLettereDaGenerare()\land 21 more...\l}" alt="" coords="91,233,306,575"/>
+</map>

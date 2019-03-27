@@ -1,0 +1,6 @@
+<map id="getSemJoin" name="getSemJoin">
+<area shape="rect" id="node2" href="$classmain_1_1_main.html#a8b260eecbaabcef8473fd87ada040682" title="main.Main.main" alt="" coords="149,5,263,32"/>
+<area shape="rect" id="node3" href="$classmain_1_1_th_cerca.html#a13a43e6d814de94978c515cb084873b1" title="main.ThCerca.run" alt="" coords="144,56,268,83"/>
+<area shape="rect" id="node4" href="$classmain_1_1_th_gen.html#a13a43e6d814de94978c515cb084873b1" title="main.ThGen.run" alt="" coords="149,107,263,133"/>
+<area shape="rect" id="node5" href="$classmain_1_1_th_vis.html#a13a43e6d814de94978c515cb084873b1" title="main.ThVis.run" alt="" coords="151,157,261,184"/>
+</map>

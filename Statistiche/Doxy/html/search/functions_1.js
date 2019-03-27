@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['getbuffer',['getBuffer',['../classmain_1_1_shared_data.html#a834679087d3e57272392eaf389f13a80',1,'main::SharedData']]],
+  ['getbufferat',['getBufferAt',['../classmain_1_1_shared_data.html#acdbb1bf0749f6d59ec74661b16cb10f7',1,'main::SharedData']]],
+  ['getlunghezzabuffer',['getLunghezzaBuffer',['../classmain_1_1_shared_data.html#a2f606346e7f2ae2e2da2ad211c0bf08a',1,'main::SharedData']]],
+  ['getnumeroletteredagenerare',['getNumeroLettereDaGenerare',['../classmain_1_1_shared_data.html#a7400b59cc3ba24fdb82489e16d602c92',1,'main::SharedData']]],
+  ['getnumeroletteredaleggere',['getNumeroLettereDaLeggere',['../classmain_1_1_shared_data.html#a560577008f849ccb788cc398fce280d1',1,'main::SharedData']]],
+  ['getnumpuntiinseriti',['getNumPuntiInseriti',['../classmain_1_1_shared_data.html#a605b5ca567b3e27a318d25b422eaf0a8',1,'main::SharedData']]],
+  ['getnumpuntiletti',['getNumPuntiLetti',['../classmain_1_1_shared_data.html#ada99c4b55a94591cbe74273d43d7171e',1,'main::SharedData']]],
+  ['getnumspaziinseriti',['getNumSpaziInseriti',['../classmain_1_1_shared_data.html#adc76b1379d370fdffb139d532a622360',1,'main::SharedData']]],
+  ['getnumspaziletti',['getNumSpaziLetti',['../classmain_1_1_shared_data.html#a54eb961c8dee642d24f9e725eb039827',1,'main::SharedData']]],
+  ['getsemjoin',['getSemJoin',['../classmain_1_1_shared_data.html#a853d0d6001de0c0e8f81c9ab5020c292',1,'main::SharedData']]],
+  ['getsemletturapunti',['getSemLetturaPunti',['../classmain_1_1_shared_data.html#a3635e525daf3f0e52187d20e37c90f68',1,'main::SharedData']]],
+  ['getsemletturaspazi',['getSemLetturaSpazi',['../classmain_1_1_shared_data.html#a218db8263ccc5317ba83f2e4ad2d49c8',1,'main::SharedData']]],
+  ['getsemscritturapunti',['getSemScritturaPunti',['../classmain_1_1_shared_data.html#ae0afb630593f701a83c77bc1ecc12e7b',1,'main::SharedData']]],
+  ['getsemscritturaspazi',['getSemScritturaSpazi',['../classmain_1_1_shared_data.html#a10670dfbf4c72ab35617e5ee0d73271d',1,'main::SharedData']]],
+  ['getsemvisualizza',['getSemVisualizza',['../classmain_1_1_shared_data.html#aa61763e3e67d28f279815eda9e81e0bd',1,'main::SharedData']]],
+  ['getsemvisualizzato',['getSemVisualizzato',['../classmain_1_1_shared_data.html#a3bc58a39321bc72c013baca2abb19a0a',1,'main::SharedData']]]
+];

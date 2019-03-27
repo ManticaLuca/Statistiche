@@ -1,0 +1,17 @@
+<map id="run" name="run">
+<area shape="rect" id="node2" href="$classmain_1_1_shared_data.html#a2f606346e7f2ae2e2da2ad211c0bf08a" title="main.SharedData.getLunghezza\lBuffer" alt="" coords="111,5,318,47"/>
+<area shape="rect" id="node3" href="$classmain_1_1_shared_data.html#a7400b59cc3ba24fdb82489e16d602c92" title="main.SharedData.getNumero\lLettereDaGenerare" alt="" coords="120,71,309,112"/>
+<area shape="rect" id="node4" href="$classmain_1_1_shared_data.html#a3635e525daf3f0e52187d20e37c90f68" title="main.SharedData.getSemLettura\lPunti" alt="" coords="109,136,320,177"/>
+<area shape="rect" id="node5" href="$classmain_1_1_shared_data.html#a218db8263ccc5317ba83f2e4ad2d49c8" title="main.SharedData.getSemLettura\lSpazi" alt="" coords="109,201,320,243"/>
+<area shape="rect" id="node6" href="$classmain_1_1_shared_data.html#a00aedde57a20e2963ebc672ae9ce97d4" title="main.SharedData.clearBuffer" alt="" coords="121,267,308,294"/>
+<area shape="rect" id="node7" href="$classmain_1_1_shared_data.html#a3bc58a39321bc72c013baca2abb19a0a" title="main.SharedData.getSemVisualizzato" alt="" coords="93,318,336,345"/>
+<area shape="rect" id="node8" href="$classmain_1_1_shared_data.html#a5d5262bdb021b4f0deab8fefdb4dfe40" title="main.SharedData.incNumSpazi\lInseriti" alt="" coords="113,369,316,411"/>
+<area shape="rect" id="node9" href="$classmain_1_1_shared_data.html#aa61763e3e67d28f279815eda9e81e0bd" title="main.SharedData.getSemVisualizza" alt="" coords="99,435,330,462"/>
+<area shape="rect" id="node10" href="$classmain_1_1_shared_data.html#a34af1e216aea720d07a45ca716b8893b" title="main.SharedData.incNumPunti\lInseriti" alt="" coords="115,487,315,528"/>
+<area shape="rect" id="node11" href="$classmain_1_1_shared_data.html#a72a099def4ea0fd3499ed5b33a493245" title="main.SharedData.setBufferAt" alt="" coords="119,553,310,579"/>
+<area shape="rect" id="node12" href="$classmain_1_1_shared_data.html#aac2fca4598933f3179d78fe7857aed55" title="main.SharedData.setNumero\lLettereDaLeggere" alt="" coords="120,604,309,645"/>
+<area shape="rect" id="node13" href="$classmain_1_1_shared_data.html#ae0afb630593f701a83c77bc1ecc12e7b" title="main.SharedData.getSemScrittura\lPunti" alt="" coords="105,669,325,711"/>
+<area shape="rect" id="node14" href="$classmain_1_1_shared_data.html#a10670dfbf4c72ab35617e5ee0d73271d" title="main.SharedData.getSemScrittura\lSpazi" alt="" coords="105,735,325,776"/>
+<area shape="rect" id="node15" href="$classmain_1_1_shared_data.html#a7e4be6ed2e568675410bd1666d4bad43" title="main.SharedData.setEstrazione\lTerminata" alt="" coords="111,800,318,841"/>
+<area shape="rect" id="node16" href="$classmain_1_1_shared_data.html#a853d0d6001de0c0e8f81c9ab5020c292" title="main.SharedData.getSemJoin" alt="" coords="117,866,312,893"/>
+</map>
